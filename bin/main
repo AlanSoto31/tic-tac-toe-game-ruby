@@ -1,24 +1,32 @@
 #!/usr/bin/env ruby
 
+game_continue = true
+
+while game_continue
+
 # Welcome to Tic Toc Toe
+p "Welcome to Tic Toc Toe"
 
-# Asigning names to the players
+player1 = true
+player2 = true
 
-# Enter the player 1's name
-# Enter the player 2's name
+while player1
 
-# Asigning marks
-# Player 1 is for X
-# Player 1 is for O
+     p "what is the name of player1?"
+     p1_name = gets.chomp
+     p "Its your turn please choose a place in the board"
+# if the move is not valid
+    p "Sorry this move is not valid"
+    p "please selec another place"
+    p "Player one selected choosen place"
+# if the move is winining move
+    p "Congratulation player1 wins the game"
+# if the move is draw
+    p "Its a draw"
 
-# Showing the grid with the options available
+    player1 = false
 
-# First turn
-# Please player 1 select one place on the board
-# Check if the option is avalable, then write the mark in the option choosen
-# Check if the option is not avalable, then ask for another option
 
-# Showing the grid with the options available
 
 # Second turn
 # Please player 2 select one place on the board
