@@ -18,3 +18,15 @@
 # Please player 1 select one place on the board
 # Check if the option is avalable, then write the mark in the option choosen
 # Check if the option is not avalable, then ask for another option
+
+# Showing the grid with the options available
+#Second turn
+# Please player 2 select one place on the board
+# Check if the option is avalable, then write the mark in the option choosen
+# Check if the option is not avalable, then ask for another option
+# And so on
+# If one player gets 3 marks in line(It may be cross, vertical or horizontal ), this one win the game.
+# If the board is full without 3 marks in line, it is a draw.
+# Show the score  # Do you want to play again
+# if play_again is true, then comeback to showing the grid
+# if play_again is false, then thanks for playing
