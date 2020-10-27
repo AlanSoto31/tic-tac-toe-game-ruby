@@ -1,2 +1,20 @@
 #!/usr/bin/env ruby
-puts 'Hello World'
+
+# Welcome to Tic Toc Toe
+
+#Asigning names to the players
+
+# Enter the player 1's name
+# Enter the player 2's name
+
+
+#Asigning marks
+# Player 1 is for X
+# Player 1 is for O
+
+# Showing the grid with the options available
+
+# First turn
+# Please player 1 select one place on the board
+# Check if the option is avalable, then write the mark in the option choosen
+# Check if the option is not avalable, then ask for another option
