@@ -1,45 +1,35 @@
 #!/usr/bin/env ruby
 
-game_continue = true
-
-while game_continue
-
-# Welcome to Tic Toc Toe
 p "Welcome to Tic Toc Toe"
 
-player1 = true
-player2 = true
+puts [" 1 " "|" " 2 " "|" " 3 "]
+puts ["------------"]
+puts [" 4 " "|" " 5 " "|" " 6 "]
+puts ["------------"]
+puts [" 7 " "|" " 8 " "|" " 9 "]
 
-while player1
+i = 0
+while i < 10
+    n = 1 
+    while n <=2
+        print "Player #{n} is your turn please choose a place in the board... "
+        input = gets.chomp
+        if input == "7"
+            print "Sorry this move is not valid, "
+        elsif input == "8"
+            puts "It's a DRAW"
+            return
+        elsif input == "9"
+            puts "Player #{n} Wins"
+            return
+        else
+        puts [" 1 " "|" " 2 " "|" " 3 "]
+        puts ["------------"]
+        puts [" 4 " "|" " 5 " "|" " 6 "]
+        puts ["------------"]
+        puts [" 7 " "|" " 8 " "|" " 9 "]
+        n += 1
+        end
+    end
+end 
 
-     p "what is the name of player1?"
-     p1_name = gets.chomp
-     p "Its your turn please choose a place in the board"
-# if the move is not valid
-    p "Sorry this move is not valid"
-    p "please selec another place"
-    p "Player one selected choosen place"
-# if the move is winining move
-    p "Congratulation player1 wins the game"
-# if the move is draw
-    p "Its a draw"
-
-    player1 = false
-
-
-
-# Second turn
-# Please player 2 select one place on the board
-# Check if the option is avalable, then write the mark in the option choosen
-# Check if the option is not avalable, then ask for another option
-
-# And so on
-
-# If one player gets 3 marks in line(It may be cross, vertical or horizontal ), this one win the game.
-# If the board is full without 3 marks in line, it is a draw.
-
-# Show the score
-
-# Do you want to play again
-# if play_again is true, then comeback to showing the grid
-# if play_again is false, then thanks for playing
