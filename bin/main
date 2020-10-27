@@ -2,13 +2,12 @@
 
 # Welcome to Tic Toc Toe
 
-#Asigning names to the players
+# Asigning names to the players
 
 # Enter the player 1's name
 # Enter the player 2's name
 
-
-#Asigning marks
+# Asigning marks
 # Player 1 is for X
 # Player 1 is for O
 
@@ -21,7 +20,7 @@
 
 # Showing the grid with the options available
 
-#Second turn
+# Second turn
 # Please player 2 select one place on the board
 # Check if the option is avalable, then write the mark in the option choosen
 # Check if the option is not avalable, then ask for another option
