@@ -1,38 +1,48 @@
 #!/usr/bin/env ruby
 
-# Welcome to Tic Toc Toe
+grid = %w[1 2 3 4 5 6 7 8 9]
 
-#Asigning names to the players
+p 'Welcome to Tic Toc Toe'
 
-# Enter the player 1's name
-# Enter the player 2's name
+puts ' 1 | 2 | 3 '
+puts '------------'
+puts ' 4 | 5 | 6 '
+puts '------------'
+puts ' 7 | 8 | 9 '
 
+game_on = true
+input = 0
 
-#Asigning marks
-# Player 1 is for X
-# Player 1 is for O
+while game_on
+  n = 1
+  while n <= 2
 
-# Showing the grid with the options available
+    print "Player #{n} is your turn please choose a place in the board... "
+    input = gets.chomp
+    input = input.to_i
 
-# First turn
-# Please player 1 select one place on the board
-# Check if the option is avalable, then write the mark in the option choosen
-# Check if the option is not avalable, then ask for another option
+    if grid[input] == 'X'
+      print 'Sorry this move is not valid, '
+      p 'please select another place'
+    else
+      grid[input] = 'X'
+      puts ' 1 | 2 | 3 '
+      puts '------------'
+      puts ' 4 | 5 | 6 '
+      puts '------------'
+      puts ' 7 | 8 | 9 '
+      n += 1
+    end
 
-# Showing the grid with the options available
+    if input == 8
+      puts "It's a DRAW"
+      game_on = false
+      return
 
-#Second turn
-# Please player 2 select one place on the board
-# Check if the option is avalable, then write the mark in the option choosen
-# Check if the option is not avalable, then ask for another option
-
-# And so on
-
-# If one player gets 3 marks in line(It may be cross, vertical or horizontal ), this one win the game.
-# If the board is full without 3 marks in line, it is a draw.
-
-# Show the score
-
-# Do you want to play again
-# if play_again is true, then comeback to showing the grid
-# if play_again is false, then thanks for playing
+    elsif input == 9
+      puts "Player #{n} Wins"
+      game_on = false
+      return
+    end
+  end
+end
