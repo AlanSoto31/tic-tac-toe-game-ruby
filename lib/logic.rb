@@ -16,10 +16,22 @@ class Game_Start
     def rules
         "
     Rules
+    
 1. The game shows a grid of 3 x 3 spaces with a number for every single available space.
 2. Players take turns to choose between 1...9 options. There are 2 marks, X for player 1 and O for player 2.
 3. When a player gets 3 marks in one line (row, column or diagonall), He is the WINNER.
 4. The game ends with a DRAW when the whole grid is full and none players has a 3 marks in one line.
         "
     end
+end
+
+class User_Inputs
+
+    def check_answer(user_answer)
+        if %w[Y y].include?(user_answer) == true
+            #$game_on = true
+            p "OK"
+        end
+    end
+
 end

@@ -8,3 +8,9 @@ puts "Welcome to Tic Tac Toe"
 puts game.rules
 puts game.display_grid
 
+inputs = User_Inputs.new
+
+print "Do you want to play (Y/N)..."
+user_answer = gets.chomp
+inputs.check_answer(user_answer)
+
