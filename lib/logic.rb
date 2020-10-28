@@ -34,4 +34,7 @@ class User_Inputs
         end
     end
 
+    def check_input(user_input)
+        true if user_input.between?(1,9)
+    end
 end
