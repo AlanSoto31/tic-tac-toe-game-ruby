@@ -2,23 +2,27 @@
 
 require_relative '../lib/logic.rb'
 
-game = Game_Start.new
+game = GameStart.new
 
 puts "Welcome to Tic Tac Toe"
 puts game.rules
 puts game.display_grid
 
-inputs = Check_Inputs.new
+inputs = CheckInputs.new
 
 print "Do you want to play (Y/N)..."
 user_answer = gets.chomp
 inputs.check_answer(user_answer)
+
+logic = GameLogic.new
 
 while $game_on == true
   n = 1
   while n <=2
       print "Player #{n} select one option please... " 
       user_input = gets.chomp.to_i
+      logic.assigning_marks(game, user_input, n)
+      puts game.display_grid
       n += 1
   end
   $game_on = false

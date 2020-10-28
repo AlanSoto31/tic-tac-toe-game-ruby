@@ -1,4 +1,6 @@
-class Game_Start
+class GameStart
+
+    attr_accessor :grid
     
     def initialize
         @grid = ["1", "2", "3", "4", "5", "6", "7", "8" , "9"]
@@ -25,7 +27,7 @@ class Game_Start
     end
 end
 
-class Check_Inputs
+class CheckInputs
 
     def check_answer(user_answer)
         if %w[Y y].include?(user_answer) == true
@@ -38,6 +40,14 @@ class Check_Inputs
     end
 end
 
-class Game_Logic
-
+class GameLogic
+    
+    def assigning_marks(game, user_input, n)
+        user_input -= 1
+        if n == 1
+            game.grid[user_input] = "X"
+        else 
+            game.grid[user_input] = "O"
+        end
+    end
 end
