@@ -8,10 +8,18 @@ puts "Welcome to Tic Tac Toe"
 puts game.rules
 puts game.display_grid
 
-inputs = User_Inputs.new
+inputs = Check_Inputs.new
 
 print "Do you want to play (Y/N)..."
 user_answer = gets.chomp
 inputs.check_answer(user_answer)
-inputs.check_input(user_input)
 
+while $game_on == true
+  n = 1
+  while n <=2
+      print "Player #{n} select one option please... " 
+      user_input = gets.chomp.to_i
+      n += 1
+  end
+  $game_on = false
+end
