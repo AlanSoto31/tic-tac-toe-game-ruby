@@ -1,49 +1,50 @@
 #!/usr/bin/env ruby
 
+# rubocop:disable Metrics/BlockNesting
+
 require_relative '../lib/classes.rb'
 
 grid = Grid.new
 printings = Strings.new
 
-puts "Welcome to Tic Tac Toe"
+puts 'Welcome to Tic Tac Toe'
 puts printings.rules
 puts grid.display_grid
 
 inputs = Players.new
 
-print "Do you want to play (Y/N)..."
+print 'Do you want to play (Y/N)...'
 user_answer = gets.chomp
-inputs.check_answer(user_answer)
 
-while $game_on == true
-  n = 1
-  while n <=2
+while inputs.check_answer(user_answer) == true
+  player_number = 1
+  while player_number <= 2
 
-      if grid.draw == true
-        p "It's a DRAW"
-        $game_on = false
+    if grid.draw == true
+      p "It's a DRAW"
+      return
+    end
+
+    print "Player #{player_number} select one option available in the grid... "
+    user_input = gets.chomp.to_i
+
+    if inputs.check_input(user_input) == true && grid.position_chosen(user_input) == true
+
+      grid.assigning_marks(user_input, player_number)
+      puts grid.display_grid
+
+      if grid.winning
+        p "Player #{player_number} is the WINNER"
         return
       end
 
-      print "Player #{n} select one option available in the grid... " 
-      user_input = gets.chomp.to_i
+      player_number += 1
 
-      if inputs.check_input(user_input) == true && grid.position_chosen(user_input) == true
-        
-        grid.assigning_marks(user_input, n)
-        puts grid.display_grid
+    else print 'This option is invalid, '
 
-        if grid.winning
-          p "Player #{n} is the WINNER"
-          $game_on = false
-          return
-        end 
-
-        n += 1
-
-      else print "This option is invalid, " 
-
-      end
+    end
   end
 
 end
+
+# rubocop:enable Metrics/BlockNesting
