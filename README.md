@@ -23,3 +23,22 @@
 - [👥 Authors](#authors)
 - [🤝 Contributing](#-contributing)
 - [⭐ Show your support](#show-your-support)
+## ❌About Tic-Tac-Toe ⭕
+Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+
+
+
+<hr>
+
+## 📐 About The Project
+We created the game Tic Tac Toe using Ruby.
+
+The game has a basic interface that runs in the terminal.
+
+The goals of this project are:
+
+- Practice with OOP (Object Oriented Programming) using Ruby.
+- Learn how to create and structure a Ruby project.
+- Learn to manage the files with correct usage to make code maintainable.
+- Practice Git Flow and Github Flow creating branches for different features and for version control.
+- This is part of the Odin project curriculum https://www.theodinproject.com/courses/ruby-programming/lessons/oop
