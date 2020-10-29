@@ -1,48 +1,50 @@
 #!/usr/bin/env ruby
 
-grid = %w[1 2 3 4 5 6 7 8 9]
+# rubocop:disable Metrics/BlockNesting
 
-p 'Welcome to Tic Toc Toe'
+require_relative '../lib/classes.rb'
 
-puts ' 1 | 2 | 3 '
-puts '------------'
-puts ' 4 | 5 | 6 '
-puts '------------'
-puts ' 7 | 8 | 9 '
+grid = Grid.new
+printings = Strings.new
 
-game_on = true
-input = 0
+puts 'Welcome to Tic Tac Toe'
+puts printings.rules
+puts grid.display_grid
 
-while game_on
-  n = 1
-  while n <= 2
+inputs = Players.new
 
-    print "Player #{n} is your turn please choose a place in the board... "
-    input = gets.chomp
-    input = input.to_i
+print 'Do you want to play (Y/N)...'
+user_answer = gets.chomp
 
-    if grid[input] == 'X'
-      print 'Sorry this move is not valid, '
-      p 'please select another place'
-    else
-      grid[input] = 'X'
-      puts ' 1 | 2 | 3 '
-      puts '------------'
-      puts ' 4 | 5 | 6 '
-      puts '------------'
-      puts ' 7 | 8 | 9 '
-      n += 1
+while inputs.check_answer(user_answer) == true
+  player_number = 1
+  while player_number <= 2
+
+    if grid.draw == true
+      p "It's a DRAW"
+      return
     end
 
-    if input == 8
-      puts "It's a DRAW"
-      game_on = false
-      return
+    print "Player #{player_number} select one option available in the grid... "
+    user_input = gets.chomp.to_i
 
-    elsif input == 9
-      puts "Player #{n} Wins"
-      game_on = false
-      return
+    if inputs.check_input(user_input) == true && grid.position_chosen(user_input) == true
+
+      grid.assigning_marks(user_input, player_number)
+      puts grid.display_grid
+
+      if grid.winning
+        p "Player #{player_number} is the WINNER"
+        return
+      end
+
+      player_number += 1
+
+    else print 'This option is invalid, '
+
     end
   end
+
 end
+
+# rubocop:enable Metrics/BlockNesting
