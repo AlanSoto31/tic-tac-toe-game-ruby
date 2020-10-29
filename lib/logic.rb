@@ -49,5 +49,13 @@ class Grid
             @grid[user_input] = "O"
         end
     end
+
+    def position_chosen(user_input)
+        user_input -= 1
+        if @grid[user_input] == "X" || @grid[user_input] == "O"
+            false
+        else true
+        end
+    end
     
 end

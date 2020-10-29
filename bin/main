@@ -19,10 +19,10 @@ while $game_on == true
   n = 1
   while n <=2
 
-      print "Player #{n} select one option please... " 
+      print "Player #{n} select one option available in the grid... " 
       user_input = gets.chomp.to_i
 
-      if inputs.check_input(user_input) == true
+      if inputs.check_input(user_input) == true && grid.position_chosen(user_input) == true
         
         grid.assigning_marks(user_input, n)
         puts grid.display_grid
