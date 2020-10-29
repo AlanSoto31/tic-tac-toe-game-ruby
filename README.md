@@ -42,3 +42,12 @@ The goals of this project are:
 - Learn to manage the files with correct usage to make code maintainable.
 - Practice Git Flow and Github Flow creating branches for different features and for version control.
 - This is part of the Odin project curriculum https://www.theodinproject.com/courses/ruby-programming/lessons/oop
+
+## 📋 Game Rules
+
+- Two player game
+- Player will have tokens or symbols (X or O)
+- Players take turns choosing a cell of the board to mark their symbol.
+- A player can only choose an empty cell if not will return an error until input is in an empty cell.
+- The first player to complete a succession of 3 of their assigned symbol (O's or X's) in a row, column or diagonal wins!
+- If all of the cells are filled with a symbol and no player matched 3 symbols, the game ends in a tie.
