@@ -19,6 +19,12 @@ while $game_on == true
   n = 1
   while n <=2
 
+      if grid.draw == true
+        p "It's a DRAW"
+        $game_on = false
+        return
+      end
+
       print "Player #{n} select one option available in the grid... " 
       user_input = gets.chomp.to_i
 
@@ -32,5 +38,5 @@ while $game_on == true
 
       end
   end
-  $game_on = false
+
 end

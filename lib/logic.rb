@@ -57,5 +57,9 @@ class Grid
         else true
         end
     end
+
+    def draw
+        @grid.all? {|item| %w[X O].include? item}
+    end
     
 end
