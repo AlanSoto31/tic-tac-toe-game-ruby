@@ -61,5 +61,21 @@ class Grid
     def draw
         @grid.all? {|item| %w[X O].include? item}
     end
+
+    def winning
+        # Rows
+        @winn_1 = @grid[0] == @grid[1] && @grid[1] == @grid[2]
+        @winn_2 = @grid[3] == @grid[4] && @grid[4] == @grid[5]
+        @winn_3 = @grid[6] == @grid[7] && @grid[7] == @grid[8]
+        # Collumns
+        @winn_4 = @grid[0] == @grid[3] && @grid[3] == @grid[6]
+        @winn_5 = @grid[1] == @grid[4] && @grid[4] == @grid[7]
+        @winn_6 = @grid[2] == @grid[5] && @grid[5] == @grid[8]
+        # Crosses
+        @winn_7 = @grid[0] == @grid[4] && @grid[4] == @grid[8]
+        @winn_8 = @grid[2] == @grid[4] && @grid[4] == @grid[6]
+
+        true if @winn_1 || @winn_2 || @winn_3 || @winn_4 || @winn_5 || @winn_6 || @winn_7 || @winn_8
+    end
     
 end

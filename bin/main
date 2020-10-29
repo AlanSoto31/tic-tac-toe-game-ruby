@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/logic.rb'
+require_relative '../lib/classes.rb'
 
 grid = Grid.new
 printings = Strings.new
@@ -32,6 +32,13 @@ while $game_on == true
         
         grid.assigning_marks(user_input, n)
         puts grid.display_grid
+
+        if grid.winning
+          p "Player #{n} is the WINNER"
+          $game_on = false
+          return
+        end 
+
         n += 1
 
       else print "This option is invalid, " 
