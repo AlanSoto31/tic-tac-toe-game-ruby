@@ -14,10 +14,11 @@ end
 
 class Players
   def check_answer(user_answer)
-    true if %w[Y].include?(user_answer) == true
+    true if %w[Y y].include?(user_answer) == true
   end
 
   def check_input(user_input)
+    user_input = user_input.to_i
     true if user_input.between?(1, 9)
   end
 end
