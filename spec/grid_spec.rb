@@ -40,4 +40,19 @@ describe Grid do
 
     end
   end
+
+  describe '#position_chosen' do
+    
+    before do
+      grids.assigning_marks(4, 1)
+    end
+
+    context 'Checks if the position chosen is available' do
+
+      it { expect(grids.position_chosen(5)).to be_equal(true) }
+
+      it { expect(grids.position_chosen(4)).not_to be_equal(true) }
+
+    end
+  end
 end
