@@ -18,7 +18,6 @@ class Players
   end
 
   def check_input(user_input)
-    user_input = user_input.to_i
     true if user_input.between?(1, 9)
   end
 end

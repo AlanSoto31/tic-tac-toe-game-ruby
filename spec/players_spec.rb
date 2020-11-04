@@ -21,7 +21,7 @@ describe Players do
 
             it { expect(player.check_input(10)).not_to be_equal(true)}
 
-            it { expect(player.check_input('a')).not_to be_equal(true)}
+            it { expect { player.check_input('a')}.to raise_error(ArgumentError) }
 
         end
     end
