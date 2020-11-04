@@ -21,4 +21,3 @@ describe Players do
     end
   end
 end
-
