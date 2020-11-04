@@ -83,6 +83,28 @@ describe Grid do
       it { expect(grids3.winning).to be_equal(true) }
 
     end
+
+    context 'Check if the game has a winner in columns format' do
+
+      let(:grids4) { Grid.new }
+      
+      before { 1.step(9, 3) { |i| grids4.assigning_marks(i, 1)} }
+      
+      it { expect(grids4.winning).to be_equal(true) }
+
+      let(:grids5) { Grid.new }
+      
+      before { 2.step(9, 3) { |i| grids5.assigning_marks(i, 1)} }
+      
+      it { expect(grids5.winning).to be_equal(true) }
+
+      let(:grids6) { Grid.new }
+      
+      before { 3.step(9, 3) { |i| grids6.assigning_marks(i, 1)} }
+      
+      it { expect(grids6.winning).to be_equal(true) }
+
+    end
   end
 end
 
