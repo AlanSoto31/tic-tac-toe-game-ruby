@@ -64,54 +64,63 @@ describe Grid do
   end
 
   describe '#winning' do
-
     context 'Check if the game has a winner in rows format' do
-      before { 1.upto(3) { |i| grids.assigning_marks(i, 1)} }
-      
+      before { 1.upto(3) { |i| grids.assigning_marks(i, 1) } }
+
       it { expect(grids.winning).to be_equal(true) }
 
       let(:grids2) { Grid.new }
 
-      before { 4.upto(6) { |i| grids2.assigning_marks(i, 1)} }
-  
+      before { 4.upto(6) { |i| grids2.assigning_marks(i, 1) } }
+
       it { expect(grids2.winning).to be_equal(true) }
 
       let(:grids3) { Grid.new }
 
-      before { 7.upto(9) { |i| grids3.assigning_marks(i, 1)} }
-  
+      before { 7.upto(9) { |i| grids3.assigning_marks(i, 1) } }
+
       it { expect(grids3.winning).to be_equal(true) }
 
+      let(:grids10) { Grid.new }
+
+      before { 4.upto(5) { |i| grids10.assigning_marks(i, 1) } }
+
+      it { expect(grids10.winning).not_to be_equal(true) }
     end
 
     context 'Check if the game has a winner in columns format' do
-
       let(:grids4) { Grid.new }
-      
-      before { 1.step(9, 3) { |i| grids4.assigning_marks(i, 1)} }
-      
+
+      before { 1.step(9, 3) { |i| grids4.assigning_marks(i, 1) } }
+
       it { expect(grids4.winning).to be_equal(true) }
 
       let(:grids5) { Grid.new }
-      
-      before { 2.step(9, 3) { |i| grids5.assigning_marks(i, 1)} }
-      
+
+      before { 2.step(9, 3) { |i| grids5.assigning_marks(i, 1) } }
+
       it { expect(grids5.winning).to be_equal(true) }
 
       let(:grids6) { Grid.new }
-      
-      before { 3.step(9, 3) { |i| grids6.assigning_marks(i, 1)} }
-      
+
+      before { 3.step(9, 3) { |i| grids6.assigning_marks(i, 1) } }
+
       it { expect(grids6.winning).to be_equal(true) }
 
       let(:grids7) { Grid.new }
-      
-      before { 1.step(9, 5) { |i| grids7.assigning_marks(i, 1)} }
-      
-      it { expect(grids7.winning).not_to be_equal(true) }
 
+      before { 1.step(9, 5) { |i| grids7.assigning_marks(i, 1) } }
+
+      it { expect(grids7.winning).not_to be_equal(true) }
+    end
+
+    context 'Checks winner in cross format' do
+      before { 1.step(9, 2) { |i| grids.assigning_marks(i, 2) } }
+
+      it { expect(grids.winning).to be_equal(true) }
+
+      it { expect(grids.winning).not_to be_equal(false) }
     end
   end
 end
-
 # rubocop:enable Layout/LineLength
