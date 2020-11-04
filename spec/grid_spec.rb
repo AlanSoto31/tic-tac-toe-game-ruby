@@ -104,6 +104,12 @@ describe Grid do
       
       it { expect(grids6.winning).to be_equal(true) }
 
+      let(:grids7) { Grid.new }
+      
+      before { 1.step(9, 5) { |i| grids7.assigning_marks(i, 1)} }
+      
+      it { expect(grids7.winning).not_to be_equal(true) }
+
     end
   end
 end
