@@ -80,6 +80,10 @@ Have Ruby installed you can see this link for more detailed instructions [Instal
 
 You MUST have Ruby installed in your system. If you don't have it installed you can go this page [Install Ruby](https://www.theodinproject.com/courses/web-development-101/lessons/installing-ruby)
 
+After that install rspec by typing the command below:
+
+    gem install rspec
+
 After installing ruby, you can download the repo or clone it (paste on the terminal) `git@github.com:AlanSoto31/tic-tac-toe-game-ruby.git`
 
 ## run-tic-tac-toe
@@ -95,8 +99,11 @@ Most Mac and some of Linux computers come with ruby installed, but still need to
 
 After verifying you have ruby installed and completing the [Installation](#installation) section, open the terminal navigate using `cd path-to-folder` containing the tic-tac-toe game and run in the terminal `bin/main` to run the game.
 
+## how-to-test
 
+In order to test our project type the command below:
 
+  rspec --format documentation
 
 ## 👥 authors
 
@@ -110,6 +117,12 @@ After verifying you have ruby installed and completing the [Installation](#insta
 - GitHub: @sumon0002009
 - Twitter: @sumon0002009
 - LinkedIn: Mir Rawshan Ali
+
+👤**Marcelo Araújo**
+
+- GitHub: [@marcelomaidden](https://github.com/marcelomaidden)
+- Twitter: [@marcelomaidden](https://twitter.com/marcelomaidden)
+- LinkedIn: [Marcelo Fernandes de Araújo](https://www.linkedin.com/in/marcelo-fernandes-de-ara%C3%BAjo-56700a171/)
 
 
 ## 🤝 contributing

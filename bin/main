@@ -2,7 +2,7 @@
 
 # rubocop:disable Metrics/BlockNesting
 
-require_relative '../lib/classes.rb'
+require_relative '../lib/classes'
 
 grid = Grid.new
 printings = Strings.new
