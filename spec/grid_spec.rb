@@ -62,6 +62,28 @@ describe Grid do
       it { expect(grids_empty.draw).to be_equal(false) }
     end
   end
+
+  describe '#winning' do
+
+    context 'Check if the game has a winner in rows format' do
+      before { 1.upto(3) { |i| grids.assigning_marks(i, 1)} }
+      
+      it { expect(grids.winning).to be_equal(true) }
+
+      let(:grids2) { Grid.new }
+
+      before { 4.upto(6) { |i| grids2.assigning_marks(i, 1)} }
+  
+      it { expect(grids2.winning).to be_equal(true) }
+
+      let(:grids3) { Grid.new }
+
+      before { 7.upto(9) { |i| grids3.assigning_marks(i, 1)} }
+  
+      it { expect(grids3.winning).to be_equal(true) }
+
+    end
+  end
 end
 
 # rubocop:enable Layout/LineLength
