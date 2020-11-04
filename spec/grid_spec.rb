@@ -13,7 +13,7 @@ describe Grid do
 
     end
   end
-  
+
   describe '#display_grid' do
     display =
       "
@@ -43,15 +43,34 @@ describe Grid do
 
   describe '#position_chosen' do
     
-    before do
-      grids.assigning_marks(4, 1)
-    end
+    before {grids.assigning_marks(4, 1)}
 
     context 'Checks if the position chosen is available' do
 
       it { expect(grids.position_chosen(5)).to be_equal(true) }
 
       it { expect(grids.position_chosen(4)).not_to be_equal(true) }
+
+    end
+  end
+
+  describe '#draw' do
+    
+    let(:grids_empty) { Grid.new }
+
+    before do
+      i = 1
+      while i <= grids.grid.length
+        grids.assigning_marks(i, 1) 
+        i += 1
+      end
+    end
+
+    context 'Checks if the grid is full of marks (draw game)' do
+
+      it { expect(grids.draw).to be_equal(true) }
+
+      it { expect(grids_empty.draw).to be_equal(false) }
 
     end
   end
